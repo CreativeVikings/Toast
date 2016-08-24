@@ -241,7 +241,10 @@ public class Toast extends CordovaPlugin {
 
   @Override
   public void onPause(boolean multitasking) {
-    hide();
+    // Don't hide the toast when onPause is called.
+    // This is used to view the toast on top of other apps.
+    // E.g. when a pdf is opened.
+    //hide();
     this.isPaused = true;
   }
 
